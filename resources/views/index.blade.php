@@ -533,7 +533,7 @@
 
 
 <!-- <button class="next">Next</button> -->
-
+<!--print_r($errors->all()); -->
 <div id="newmember" class="bg-modal-container" visibility: hidden >
     
 <div class="slider">
@@ -543,7 +543,21 @@
        
        <img src="images\model-images\registration.png" alt="" width="400px" height="257.838px"> 
 
-        <form action="insert" method="post">
+        @if(count($errors) > 0)
+
+        <div class="alert alert-danger">
+        <ul>
+
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+
+        </ul>
+        </div>
+
+        @endif
+
+        <form id ="form1" action="insert" method="post">
             {{ csrf_field() }}
             <input type="text" placeholder="Name" name="name">
             <input type="text" placeholder="Username" name="username">
@@ -552,6 +566,7 @@
             <input type="submit" name="submit">
             <!-- <a href="#" id="nexta" class="button">Next</a> -->
         </form>
+
     </div>      
 
     <div class="second-modal-contents">
@@ -565,8 +580,21 @@
       <div class="third-modal-contents">
        <img src="images\model-images\registration.png" alt="" width="400px" height="257.838px"> 
 
-      
-        <form action="insert2" method="post">
+
+        @if(count($errors) > 0)
+        <div class="alert alert-danger">
+        <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+        </ul>
+        </div>
+
+        @endif
+        
+
+
+        <form id ="form2" action="" method="post">
             {{ csrf_field() }}
             <input id="Accountq1" type="text" placeholder="" name="id1">
             <input id="Accountq2" type="text" placeholder="" name="id2">
@@ -622,6 +650,7 @@
         </li>
     </ul>
 </form>
+
 </div>
 
 

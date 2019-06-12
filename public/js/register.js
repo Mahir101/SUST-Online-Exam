@@ -41,6 +41,7 @@ $(function() {
 
      if(rd1.checked==true){
       accountType = 0;
+      document.getElementById("form2").action = "insert1";
       document.getElementById("Accountq1").placeholder="Student Name";      
       document.getElementById("Accountq2").placeholder="Registraion No.";
       document.getElementById("Accountq3").placeholder="Department";
@@ -51,6 +52,7 @@ $(function() {
 
      if(rd2.checked==true){
       accountType = 1;
+      document.getElementById("form2").action = "insert2"; 
       document.getElementById("Accountq1").placeholder="Teacher Name";
       document.getElementById("Accountq2").placeholder="Department";
       document.getElementById("Accountq3").placeholder="Designation";
