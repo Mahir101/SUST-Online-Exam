@@ -1,7 +1,5 @@
 <?php
-//Route::get('/', function () { return redirect('/admin/home'); });
 
-//Soumik
 Route::get('/start', function () {
     return view('start');
 });
@@ -20,36 +18,24 @@ Route::get('/', function(){
      return redirect('start');
 });
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
-
 Route::get('/showResult', 'ShowResultController@index')->name('showResult');;
 
 //course and lesson controllers
 Route::get('course/{course_name}', ['uses' => 'CoursesController@show', 'as' => 'courses.show']);
-//Route::post('course/payment', ['uses' => 'CoursesController@payment', 'as' => 'courses.payment']);
-//Route::post('course/{course_id}/rating', ['uses' => 'CoursesController@rating', 'as' => 'courses.rating']);
-//lesson controllers
 Route::get('lesson/{title}', ['uses' => 'LessonController@show', 'as' => 'lessons.show']);
-//Route::post('lesson/{slug}/test', ['uses' => 'LessonsController@test', 'as' => 'lessons.test']);
 
-// Authentication Routes...
+
+// Authentication Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('auth.login');
 Route::post('logout', 'Auth\LoginController@logout')->name('auth.logout');
 
 
 
-//////////////////ekhane problem
+//data insertion
 Route::post('insert', 'Controller@ins');
 Route::post('insert1', 'Controller@ins1');
 Route::post('insert2', 'Controller@ins2');
-
-
-
-//////////////////////
-
 
 
 
